@@ -1,0 +1,320 @@
+.page-header {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+/* LEFT */
+
+.page-header-left {
+  min-width: 0;
+}
+
+.page-breadcrumb {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 9px;
+
+  color: #627589;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+}
+
+.breadcrumb-separator {
+  color: #34495b;
+}
+
+.page-header-title-row {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 28px;
+  font-weight: 650;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.02em;
+}
+
+.station-context {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 8px;
+
+  color: var(--text-secondary);
+
+  font-size: 10px;
+}
+
+.station-context strong {
+  color: var(--accent-cyan);
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+}
+
+.station-context span {
+  color: #607387;
+}
+
+/* ONLINE */
+
+.station-online-badge {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 9px;
+
+  border: 1px solid rgba(66, 232, 139, 0.2);
+
+  border-radius: 5px;
+
+  color: #42e88b;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+}
+
+.station-online-badge span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #42e88b;
+
+  box-shadow: 0 0 8px rgba(66, 232, 139, 0.7);
+}
+
+/* RIGHT */
+
+.page-header-right {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+.header-clock {
+  min-width: 120px;
+
+  padding-right: 14px;
+
+  text-align: right;
+
+  border-right: 1px solid var(--border);
+}
+
+.header-date {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--text-secondary);
+
+  font-size: 8px;
+}
+
+.header-clock strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-family: monospace;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+}
+
+.header-clock small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #52677a;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+/* OPERATOR */
+
+.operator-profile {
+  min-width: 170px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 7px 12px 7px 7px;
+
+  background: #091522;
+
+  border: 1px solid var(--border);
+
+  border-radius: 24px;
+}
+
+.operator-avatar {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(76, 201, 240, 0.16);
+
+  border: 1px solid rgba(76, 201, 240, 0.35);
+
+  color: var(--accent-cyan);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.operator-info strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.operator-info span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--text-secondary);
+
+  font-size: 8px;
+}
+
+/* HEADER LOGOUT */
+
+.header-logout {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: transparent;
+
+  border: 1px solid var(--border);
+
+  border-radius: 6px;
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.header-logout:hover {
+  color: var(--accent-cyan);
+
+  border-color: rgba(76, 201, 240, 0.35);
+
+  background: rgba(76, 201, 240, 0.04);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+  .header-clock {
+    display: none;
+  }
+
+  .operator-profile {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 750px) {
+  .page-header {
+    flex-direction: column;
+  }
+
+  .page-header-right {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .page-header-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .operator-profile {
+    flex: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .page-header h1 {
+    font-size: 23px;
+  }
+
+  .station-context {
+    flex-wrap: wrap;
+  }
+
+  .page-header-right {
+    gap: 8px;
+  }
+}

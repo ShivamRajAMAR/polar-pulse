@@ -1,0 +1,130 @@
+.station-select-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: var(--bg-deep);
+}
+
+.station-select-container {
+  width: 100%;
+  max-width: 620px;
+}
+
+.station-select-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.station-select-header > span {
+  display: block;
+  margin-bottom: 10px;
+
+  color: var(--accent-cyan);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.station-select-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 40px);
+}
+
+.station-select-header p {
+  margin-top: 10px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.station-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.station-option {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  width: 100%;
+  padding: 20px;
+
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.station-option:hover {
+  transform: translateX(4px);
+  border-color: var(--accent-cyan);
+}
+
+.station-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid var(--accent-cyan);
+  border-radius: 5px;
+
+  color: var(--accent-cyan);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.station-info {
+  flex: 1;
+}
+
+.station-info h2 {
+  font-family: var(--font-display);
+  font-size: 19px;
+}
+
+.station-info p {
+  margin-top: 5px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.station-arrow {
+  color: var(--accent-cyan);
+  font-size: 20px;
+}
+
+.station-back {
+  display: block;
+  margin: 22px auto 0;
+
+  border: none;
+  background: transparent;
+
+  color: var(--text-secondary);
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.station-back:hover {
+  color: var(--accent-cyan);
+}
+
+@media (max-width: 600px) {
+  .station-option {
+    padding: 16px;
+  }
+}

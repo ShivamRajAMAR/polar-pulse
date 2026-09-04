@@ -1,0 +1,1054 @@
+/* =====================================================
+   POLAR PULSE — ENERGY CONTROL
+===================================================== */
+
+.energy-overview {
+  position: relative;
+
+  width: 100%;
+  padding: 28px;
+
+  box-sizing: border-box;
+
+  color: #e8f7ff;
+
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 32px 32px;
+
+  border: 1px solid rgba(105, 220, 255, 0.13);
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.energy-command-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.energy-eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #79cae5;
+
+  font-size: 9px;
+  letter-spacing: 0.2em;
+
+  opacity: 0.65;
+}
+
+.energy-command-header h2 {
+  margin: 0;
+
+  font-size: 28px;
+  letter-spacing: -0.035em;
+}
+
+.energy-subtitle,
+.energy-command-header p {
+  margin: 8px 0 0;
+
+  color: rgba(232, 247, 255, 0.53);
+
+  font-size: 12px;
+}
+
+.energy-system-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 13px;
+
+  border: 1px solid rgba(99, 255, 211, 0.13);
+
+  background: rgba(99, 255, 211, 0.025);
+
+  color: #a8eadd;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+.energy-status-pulse {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #63ffd3;
+
+  box-shadow:
+    0 0 7px #63ffd3,
+    0 0 15px rgba(99, 255, 211, 0.5);
+
+  animation: energyPulse 1.8s infinite;
+}
+
+/* =====================================================
+   TOP STRIP
+===================================================== */
+
+.energy-top-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+
+  margin-bottom: 32px;
+}
+
+.energy-top-card {
+  position: relative;
+
+  min-height: 90px;
+
+  padding: 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(105, 220, 255, 0.1);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(50, 130, 160, 0.07),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  overflow: hidden;
+}
+
+.energy-top-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  background: rgba(99, 220, 255, 0.22);
+}
+
+.energy-top-card span,
+.energy-top-card small {
+  display: block;
+
+  color: #718999;
+
+  font-size: 8px;
+  letter-spacing: 0.14em;
+}
+
+.energy-top-card strong {
+  display: block;
+
+  margin-top: 9px;
+
+  color: #e9fbff;
+
+  font-size: 18px;
+}
+
+.energy-top-card small {
+  margin-top: 5px;
+
+  opacity: 0.6;
+}
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.energy-section-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-bottom: 13px;
+}
+
+.energy-section-heading > div:first-child {
+  flex-shrink: 0;
+}
+
+.energy-section-heading span {
+  display: block;
+
+  font-size: 9px;
+
+  letter-spacing: 0.18em;
+}
+
+.energy-section-heading small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #60788a;
+
+  font-size: 7px;
+
+  letter-spacing: 0.12em;
+}
+
+.energy-heading-line {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(100, 220, 255, 0.28),
+      transparent
+    );
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.energy-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-bottom: 28px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.energy-card {
+  position: relative;
+
+  min-height: 305px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      150deg,
+      rgba(21, 48, 61, 0.55),
+      rgba(6, 15, 23, 0.95)
+    );
+
+  border: 1px solid rgba(105, 220, 255, 0.11);
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.energy-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(110, 225, 255, 0.35);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.23),
+    0 0 25px rgba(80, 205, 255, 0.05);
+}
+
+.energy-card.selected {
+  border-color: rgba(110, 225, 255, 0.5);
+
+  box-shadow:
+    0 0 28px rgba(80, 205, 255, 0.09);
+}
+
+.energy-card-scan {
+  position: absolute;
+
+  top: 0;
+  left: -40%;
+
+  width: 35%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(110, 225, 255, 0.7),
+      transparent
+    );
+
+  animation: energyScan 4.5s linear infinite;
+}
+
+.energy-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.energy-label {
+  display: block;
+
+  font-size: 9px;
+  letter-spacing: 0.15em;
+
+  color: #95aebb;
+}
+
+.energy-node {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #4d6878;
+
+  font-size: 6px;
+
+  letter-spacing: 0.12em;
+}
+
+.energy-icon {
+  width: 33px;
+  height: 33px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(105, 220, 255, 0.14);
+
+  color: #80dfff;
+
+  background: rgba(100, 210, 255, 0.04);
+
+  font-size: 15px;
+
+  box-shadow:
+    inset 0 0 12px rgba(100, 210, 255, 0.03);
+}
+
+.energy-icon.active {
+  color: #ffd166;
+
+  border-color: rgba(255, 209, 102, 0.22);
+
+  box-shadow:
+    0 0 15px rgba(255, 209, 102, 0.06);
+}
+
+/* =====================================================
+   MAIN VALUE
+===================================================== */
+
+.energy-main-value {
+  margin-top: 25px;
+}
+
+.energy-main-value h3 {
+  margin: 0;
+
+  font-size: 30px;
+
+  font-weight: 650;
+
+  letter-spacing: -0.045em;
+}
+
+.energy-value-label {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #587082;
+
+  font-size: 7px;
+
+  letter-spacing: 0.13em;
+}
+
+/* =====================================================
+   CIRCULAR GAUGE
+===================================================== */
+
+.energy-gauge-row {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 21px;
+}
+
+.energy-circular-gauge {
+  width: 92px;
+  height: 92px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background:
+    conic-gradient(
+      #63ddff var(--energy-percent),
+      rgba(255, 255, 255, 0.055) 0
+    );
+
+  box-shadow:
+    0 0 25px rgba(70, 200, 255, 0.07);
+}
+
+.energy-gauge-core {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #07131c;
+
+  box-shadow:
+    inset 0 0 22px rgba(70, 200, 255, 0.06);
+}
+
+.energy-gauge-core strong {
+  margin-top: 24px;
+
+  font-size: 21px;
+}
+
+.energy-gauge-core span {
+  font-size: 8px;
+
+  opacity: 0.5;
+}
+
+.energy-gauge-info {
+  flex: 1;
+}
+
+.energy-gauge-info span {
+  display: block;
+
+  color: #617989;
+
+  font-size: 7px;
+
+  letter-spacing: 0.12em;
+}
+
+.energy-gauge-info strong {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 10px;
+}
+
+.energy-mini-bar {
+  height: 3px;
+
+  margin-top: 14px;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.energy-mini-bar span {
+  display: block;
+
+  height: 100%;
+
+  background: #63ddff;
+
+  box-shadow: 0 0 10px rgba(99, 221, 255, 0.4);
+}
+
+/* =====================================================
+   GENERATOR
+===================================================== */
+
+.generator-panel {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 24px;
+}
+
+.generator-machine {
+  position: relative;
+
+  width: 88px;
+  height: 88px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 209, 102, 0.16);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 209, 102, 0.055),
+      transparent 65%
+    );
+}
+
+.generator-core {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #09151e;
+
+  color: #9aafbb;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+.generator-active .generator-core {
+  color: #ffd166;
+
+  text-shadow: 0 0 12px rgba(255, 209, 102, 0.45);
+
+  box-shadow:
+    0 0 18px rgba(255, 209, 102, 0.1);
+}
+
+.generator-ring {
+  position: absolute;
+
+  border: 1px dashed rgba(255, 209, 102, 0.13);
+
+  border-radius: 50%;
+}
+
+.ring-a {
+  inset: 8px;
+}
+
+.ring-b {
+  inset: 17px;
+}
+
+.generator-info {
+  flex: 1;
+}
+
+.generator-info span {
+  display: block;
+
+  color: #617989;
+
+  font-size: 7px;
+
+  letter-spacing: 0.12em;
+}
+
+.generator-info strong {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+}
+
+.generator-signal {
+  display: flex;
+
+  gap: 4px;
+
+  margin-top: 12px;
+}
+
+.generator-signal span {
+  width: 9px;
+  height: 3px;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.generator-signal span.on {
+  background: #ffd166;
+
+  box-shadow: 0 0 8px rgba(255, 209, 102, 0.45);
+}
+
+/* =====================================================
+   POWER LOAD
+===================================================== */
+
+.load-monitor {
+  margin-top: 28px;
+}
+
+.load-value-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.load-value-row span {
+  color: #607989;
+
+  font-size: 7px;
+
+  letter-spacing: 0.12em;
+}
+
+.load-value-row strong {
+  font-size: 10px;
+}
+
+.load-bars {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 5px;
+
+  height: 80px;
+
+  margin-top: 17px;
+}
+
+.load-bars span {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 25%;
+
+  background: rgba(100, 215, 255, 0.07);
+
+  border: 1px solid rgba(100, 215, 255, 0.05);
+}
+
+.load-bars span:nth-child(2) {
+  height: 38%;
+}
+
+.load-bars span:nth-child(3) {
+  height: 50%;
+}
+
+.load-bars span:nth-child(4) {
+  height: 65%;
+}
+
+.load-bars span:nth-child(5) {
+  height: 77%;
+}
+
+.load-bars span:nth-child(6) {
+  height: 88%;
+}
+
+.load-bars span:nth-child(7) {
+  height: 95%;
+}
+
+.load-bars span:nth-child(8) {
+  height: 100%;
+}
+
+.load-bars .load-active {
+  background:
+    linear-gradient(
+      180deg,
+      #65e5ff,
+      rgba(65, 180, 220, 0.28)
+    );
+
+  border-color: rgba(100, 220, 255, 0.16);
+
+  box-shadow:
+    0 0 9px rgba(100, 220, 255, 0.1);
+}
+
+.load-scale {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 8px;
+
+  color: #526b7b;
+
+  font-size: 6px;
+
+  letter-spacing: 0.12em;
+}
+
+/* =====================================================
+   CARD FOOTER
+===================================================== */
+
+.energy-card-footer {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+  bottom: 17px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 11px;
+
+  border-top: 1px solid rgba(105, 220, 255, 0.08);
+
+  color: #5d7484;
+
+  font-size: 7px;
+}
+
+.energy-open {
+  color: #7acbe1;
+
+  letter-spacing: 0.1em;
+}
+
+/* =====================================================
+   DETAIL
+===================================================== */
+
+.energy-detail {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+  bottom: 48px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 6px;
+
+  padding-top: 10px;
+
+  border-top: 1px solid rgba(105, 220, 255, 0.08);
+}
+
+.energy-detail div {
+  padding: 7px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.energy-detail span {
+  display: block;
+
+  color: #5d7484;
+
+  font-size: 6px;
+
+  letter-spacing: 0.1em;
+}
+
+.energy-detail strong {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 7px;
+}
+
+/* =====================================================
+   ENERGY FLOW
+===================================================== */
+
+.energy-flow-panel {
+  position: relative;
+
+  padding: 23px;
+
+  border: 1px solid rgba(105, 220, 255, 0.12);
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(60, 180, 230, 0.05),
+      transparent 50%
+    ),
+    rgba(5, 15, 22, 0.65);
+
+  overflow: hidden;
+}
+
+.energy-flow-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.energy-flow-header h3 {
+  margin: 0;
+
+  font-size: 18px;
+}
+
+.energy-flow-state {
+  color: #63ffd3;
+
+  font-size: 8px;
+
+  letter-spacing: 0.13em;
+}
+
+/* FLOW */
+
+.energy-flow {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  margin-top: 28px;
+
+  overflow-x: auto;
+}
+
+.flow-node {
+  min-width: 115px;
+
+  padding: 14px;
+
+  text-align: center;
+
+  border: 1px solid rgba(105, 220, 255, 0.11);
+
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.flow-node > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #75ddff;
+
+  font-size: 17px;
+}
+
+.flow-node strong {
+  display: block;
+
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+}
+
+.flow-node small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #607889;
+
+  font-size: 8px;
+}
+
+.flow-node.central {
+  border-color: rgba(105, 220, 255, 0.27);
+
+  box-shadow:
+    0 0 20px rgba(70, 200, 255, 0.05);
+}
+
+.flow-node.backup-node {
+  border-color: rgba(255, 209, 102, 0.2);
+}
+
+.flow-node.backup-node > span {
+  color: #ffd166;
+}
+
+.flow-line {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  width: 60px;
+
+  flex-shrink: 0;
+}
+
+.flow-line i {
+  display: block;
+
+  width: 10px;
+  height: 2px;
+
+  flex: 1;
+
+  background: rgba(100, 220, 255, 0.12);
+}
+
+.flow-line i:nth-child(1) {
+  animation: flowBlink 1.5s 0s infinite;
+}
+
+.flow-line i:nth-child(2) {
+  animation: flowBlink 1.5s 0.25s infinite;
+}
+
+.flow-line i:nth-child(3) {
+  animation: flowBlink 1.5s 0.5s infinite;
+}
+
+.flow-line.backup i {
+  background: rgba(255, 209, 102, 0.15);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.energy-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 15px;
+
+  color: #526878;
+
+  font-size: 7px;
+
+  letter-spacing: 0.11em;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes energyPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes energyScan {
+  0% {
+    left: -40%;
+  }
+
+  100% {
+    left: 140%;
+  }
+}
+
+@keyframes flowBlink {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(100, 220, 255, 0.55);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+  .energy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .energy-top-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .energy-flow {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .energy-overview {
+    padding: 18px;
+  }
+
+  .energy-command-header {
+    flex-direction: column;
+  }
+
+  .energy-grid,
+  .energy-top-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .energy-footer {
+    flex-direction: column;
+    gap: 7px;
+  }
+}

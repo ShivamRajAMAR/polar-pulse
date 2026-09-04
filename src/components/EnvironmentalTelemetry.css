@@ -1,0 +1,244 @@
+.environment-telemetry {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.environment-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.environment-subtitle {
+  margin-top: 4px;
+
+  font-size: 12px;
+
+  color: var(--text-secondary);
+}
+
+.environment-live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  color: var(--accent-cyan);
+
+  white-space: nowrap;
+}
+
+.environment-live span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--accent-cyan);
+
+  box-shadow: 0 0 7px var(--accent-cyan);
+}
+
+/* ============================================
+   TELEMETRY GRID
+============================================ */
+
+.environment-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+.environment-card {
+  position: relative;
+
+  padding: 18px;
+
+  background: var(--bg-panel);
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.environment-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--accent-cyan);
+
+  opacity: 0.45;
+}
+
+.environment-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-secondary);
+}
+
+.environment-value {
+  display: block;
+
+  font-family: var(--font-display);
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+
+  margin-bottom: 6px;
+}
+
+.environment-note {
+  display: block;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   CONDITION
+============================================ */
+
+.environment-condition {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-top: 14px;
+
+  padding: 14px 16px;
+
+  background: var(--bg-panel);
+
+  border: 1px solid var(--border);
+
+  border-left: 3px solid var(--condition-color);
+
+  border-radius: 8px;
+}
+
+.environment-condition.ok {
+  --condition-color: var(--status-ok);
+}
+
+.environment-condition.warn {
+  --condition-color: var(--status-warn);
+}
+
+.environment-condition-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.environment-condition-dot {
+  width: 9px;
+  height: 9px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--condition-color);
+
+  box-shadow: 0 0 8px var(--condition-color);
+}
+
+.environment-condition-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-secondary);
+}
+
+.environment-condition-left strong {
+  display: block;
+
+  font-size: 13px;
+
+  color: var(--text-primary);
+}
+
+.environment-condition-status {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  color: var(--condition-color);
+
+  white-space: nowrap;
+}
+
+/* ============================================
+   TABLET
+============================================ */
+
+@media (max-width: 900px) {
+  .environment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 600px) {
+  .environment-header {
+    flex-direction: column;
+  }
+
+  .environment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .environment-condition {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

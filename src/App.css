@@ -1,0 +1,620 @@
+/* =========================================================
+   POLAR PULSE SIDEBAR - FORCE LAYOUT
+========================================================= */
+
+.app-shell {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  background: #050b12;
+  color: #eef5fb;
+}
+
+/* SIDEBAR */
+
+.app-shell .sidebar {
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+  height: 100vh;
+
+  position: sticky;
+  top: 0;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px 16px 18px;
+
+  background: #07101b;
+
+  border-right: 1px solid #1b3144;
+
+  color: #eef5fb;
+
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+/* BRAND */
+
+.app-shell .sidebar .sidebar-brand {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 4px 6px 20px;
+
+  border-bottom: 1px solid #1b3144;
+}
+
+.app-shell .sidebar .brand-mark {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  gap: 3px;
+
+  flex-shrink: 0;
+}
+
+.app-shell .sidebar .brand-mark span {
+  display: block;
+
+  width: 5px;
+
+  border-radius: 3px;
+
+  background: #4cc9f0;
+}
+
+.app-shell .sidebar .brand-mark span:nth-child(1) {
+  height: 12px;
+}
+
+.app-shell .sidebar .brand-mark span:nth-child(2) {
+  height: 21px;
+}
+
+.app-shell .sidebar .brand-mark span:nth-child(3) {
+  height: 15px;
+}
+
+.app-shell .sidebar .sidebar-brand strong {
+  display: block;
+
+  margin: 0;
+
+  color: #eef5fb;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+.app-shell .sidebar .sidebar-brand small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #71869a;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+/* ONLINE */
+
+.app-shell .sidebar .sidebar-status {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin: 18px 0 14px;
+  padding: 10px;
+
+  background: #091522;
+
+  border: 1px solid #1b3144;
+  border-radius: 7px;
+}
+
+.app-shell .sidebar .sidebar-status-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #42e88b;
+
+  box-shadow: 0 0 9px rgba(66, 232, 139, 0.7);
+}
+
+.app-shell .sidebar .sidebar-status strong {
+  display: block;
+
+  color: #eef5fb;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.app-shell .sidebar .sidebar-status small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #71869a;
+
+  font-size: 8px;
+}
+
+/* ALERTS */
+
+.app-shell .sidebar .sidebar-alerts-trigger {
+  width: 100% !important;
+  height: 38px;
+
+  box-sizing: border-box;
+
+  display: flex !important;
+  align-items: center;
+
+  margin: 0;
+  padding: 0 10px;
+
+  background: transparent;
+
+  border: 1px solid #1b3144;
+  border-radius: 6px;
+
+  color: #9aabbb;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  font-family: inherit;
+}
+
+.app-shell .sidebar .sidebar-alerts-trigger:hover,
+.app-shell .sidebar .sidebar-alerts-trigger.active {
+  background: rgba(76, 201, 240, 0.06);
+
+  border-color: rgba(76, 201, 240, 0.35);
+
+  color: #eef5fb;
+}
+
+.app-shell .sidebar .alerts-bell {
+  width: 24px;
+
+  font-size: 12px;
+}
+
+.app-shell .sidebar .alerts-label {
+  flex: 1;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.app-shell .sidebar .nav-alert-count {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border-radius: 50%;
+
+  background: rgba(255, 180, 70, 0.12);
+
+  border: 1px solid rgba(255, 180, 70, 0.3);
+
+  color: #ffb446;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* NAV */
+
+.app-shell .sidebar .sidebar-nav {
+  width: 100%;
+
+  margin-top: 24px;
+}
+
+.app-shell .sidebar .sidebar-section-label {
+  display: block;
+
+  margin: 0 7px 9px;
+
+  color: #627589;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+.app-shell .sidebar .sidebar-nav-item {
+  width: 100% !important;
+  height: 38px;
+
+  box-sizing: border-box;
+
+  display: flex !important;
+  align-items: center;
+
+  margin: 0 0 4px;
+  padding: 0 9px;
+
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 6px;
+
+  color: #91a4b7;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  appearance: none;
+}
+
+.app-shell .sidebar .sidebar-nav-item:hover {
+  background: rgba(76, 201, 240, 0.04);
+
+  color: #eef5fb;
+}
+
+.app-shell .sidebar .sidebar-nav-item.active {
+  background: rgba(76, 201, 240, 0.07);
+
+  border-color: rgba(76, 201, 240, 0.22);
+
+  color: #eef5fb;
+}
+
+.app-shell .sidebar .nav-code {
+  width: 31px;
+
+  flex-shrink: 0;
+
+  color: #52677a;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.app-shell .sidebar .sidebar-nav-item.active .nav-code {
+  color: #4cc9f0;
+}
+
+.app-shell .sidebar .nav-label {
+  font-size: 10px;
+  font-weight: 650;
+}
+
+/* FOOTER */
+
+.app-shell .sidebar .sidebar-footer {
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: auto;
+  padding: 16px 4px 0;
+
+  border-top: 1px solid #1b3144;
+}
+
+.app-shell .sidebar .station-info span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #627589;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.app-shell .sidebar .station-info strong {
+  display: block;
+
+  color: #4cc9f0;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.05em;
+}
+
+.app-shell .sidebar .sidebar-coordinates {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 8px;
+}
+
+.app-shell .sidebar .sidebar-coordinates span {
+  color: #91a4b7;
+
+  font-size: 9px;
+}
+
+/* LOGOUT */
+
+.app-shell .sidebar .sidebar-logout {
+  width: 100% !important;
+  height: 36px;
+
+  box-sizing: border-box;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 15px;
+  padding: 0 10px;
+
+  background: transparent;
+
+  border: 1px solid #1b3144;
+  border-radius: 6px;
+
+  color: #91a4b7;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+}
+
+.app-shell .sidebar .sidebar-logout:hover {
+  color: #4cc9f0;
+
+  border-color: rgba(76, 201, 240, 0.35);
+
+  background: rgba(76, 201, 240, 0.04);
+}
+
+/* MAIN */
+
+.app-shell .main-content {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  padding: 32px 36px 48px;
+
+  background: #050b12;
+
+  overflow-x: hidden;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .app-shell .sidebar {
+    width: 220px !important;
+    min-width: 220px !important;
+    max-width: 220px !important;
+  }
+
+  .app-shell .main-content {
+    padding: 26px 24px 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    display: block;
+  }
+
+  .app-shell .sidebar {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto;
+
+    position: relative;
+
+    border-right: none;
+    border-bottom: 1px solid #1b3144;
+  }
+
+  .app-shell .main-content {
+    padding: 22px 16px 32px;
+  }
+}
+/* =========================================================
+   DIGITAL TWIN / MISSION VIEW SECTIONS
+========================================================= */
+
+.mission-section-heading,
+.mission-view-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 16px;
+}
+
+.mission-section-heading {
+  margin-top: 4px;
+
+  padding: 18px 20px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(76, 201, 240, 0.045),
+    rgba(76, 201, 240, 0.012)
+  );
+
+  border: 1px solid rgba(76, 201, 240, 0.16);
+
+  border-radius: 9px;
+}
+
+.mission-section-kicker,
+.mission-view-kicker {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+}
+
+.mission-section-kicker {
+  color: #4cc9f0;
+}
+
+.mission-view-kicker {
+  color: #8a9aaa;
+}
+
+.mission-section-heading h2,
+.mission-view-heading h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.mission-section-heading p,
+.mission-view-heading p {
+  max-width: 680px;
+
+  margin: 6px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.mission-section-badge,
+.mission-view-badge {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 10px;
+
+  flex-shrink: 0;
+
+  border-radius: 5px;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 0.11em;
+}
+
+.mission-section-badge {
+  color: #4cc9f0;
+
+  background: rgba(76, 201, 240, 0.045);
+
+  border: 1px solid rgba(76, 201, 240, 0.14);
+}
+
+.mission-section-badge span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #4cc9f0;
+
+  box-shadow: 0 0 8px rgba(76, 201, 240, 0.7);
+}
+
+.mission-view-heading {
+  margin-top: 28px;
+
+  padding: 16px 4px 4px;
+
+  border-top: 1px solid var(--border);
+}
+
+.mission-view-badge {
+  color: #42e88b;
+
+  background: rgba(66, 232, 139, 0.035);
+
+  border: 1px solid rgba(66, 232, 139, 0.12);
+}
+
+.mission-view-badge span {
+  color: #42e88b;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .mission-section-heading,
+  .mission-view-heading {
+    flex-direction: column;
+  }
+
+  .mission-section-badge,
+  .mission-view-badge {
+    align-self: flex-start;
+  }
+}
