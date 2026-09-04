@@ -1,3 +1,4 @@
+import { getDemoStationData } from "./lib/demoSimulation";
 import { useState, useEffect } from "react";
 import "./App.css";
 import { supabase } from "./lib/supabase";
@@ -37,6 +38,7 @@ function App() {
   const [userMode, setUserMode] = useState(null);
   const [activePage, setActivePage] = useState("mission");
   const [liveStationData, setLiveStationData] = useState(null);
+  const [demoIndex, setDemoIndex] = useState(0);
 useEffect(() => {
   async function testSupabase() {
     const { data, error } = await supabase
@@ -52,22 +54,29 @@ useEffect(() => {
  useEffect(() => {
   if (!selectedStation) return;
 
-  async function loadStationData() {
-    try {
-      const data = await getStationLiveData(selectedStation);
-      setLiveStationData(data);
-    } catch (error) {
-      console.error("STATION DATA ERROR:", error);
-    }
-  }
+  // Show first scenario immediately
+  setLiveStationData(
+    getDemoStationData(selectedStation, 0)
+  );
 
-  // Load immediately
-  loadStationData();
+  setDemoIndex(0);
 
-  // Refresh every 5 seconds
-  const interval = setInterval(loadStationData, 5000);
+  // Change scenario every 8 seconds
+  const interval = setInterval(() => {
+    setDemoIndex((currentIndex) => {
+      const nextIndex = currentIndex + 1;
 
-  // Stop refreshing when station changes/unmounts
+      setLiveStationData(
+        getDemoStationData(
+          selectedStation,
+          nextIndex
+        )
+      );
+
+      return nextIndex;
+    });
+  }, 8000);
+
   return () => clearInterval(interval);
 }, [selectedStation]);
   // =====================================================
